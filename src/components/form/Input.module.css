@@ -9,7 +9,7 @@
 }
 .form_control input {
   padding: 0.7em;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   border: 0.1px solid;
   border-color: black;
 }

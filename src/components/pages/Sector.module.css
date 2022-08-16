@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
+  flex-wrap: wrap;
 }
 .form_control label {
   margin-bottom: 0.6em;
   font-weight: bold;
 }
-.form_control select {
-  padding: 0.7em;
-  /* border-radius: 0; */
-  border: none;
-}
+/* .form_control input {
+  border-radius: 10;
+} */

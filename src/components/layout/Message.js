@@ -3,7 +3,7 @@ import styles from './Message.module.css'
 
 function Message({ type, msg }) {
   const [visible, setVisible] = useState(false)
-
+  //se não tiver mensagem é visibilidade falsa, se tiver exibe uma mensagem, e começa um timer de 3 segundos
   useEffect(() => {
     if (!msg) {
       setVisible(false)

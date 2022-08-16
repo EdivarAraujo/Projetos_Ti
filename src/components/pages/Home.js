@@ -1,5 +1,5 @@
 import styles from './Home.module.css'
-import savings from '../../img/savings.svg'
+import projeto from '../../img/projeto.png'
 import LinkButton from '../layout/LinkButton'
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
       </h1>
       <p>Começe a navegar agora mesmo.</p>
       <LinkButton to="/novoconteudo" text="Novo Projeto" />
-      <img src={savings} alt="Projetos" />
+      <img style={{ width: 1000 }} src={projeto} alt="Projetos" />
     </section>
   )
 }

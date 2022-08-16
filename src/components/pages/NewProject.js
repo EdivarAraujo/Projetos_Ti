@@ -25,7 +25,7 @@ function NewProject() {
       .then(data => {
         console.log(data)
         //redirecionamento
-        history.push('/projects', { message: 'Projeto criado com sucesso!' })
+        history.push('/project', { message: 'Projeto criado com sucesso!' })
       })
       //caso de algum erro
       .catch(err => console.log(err))
@@ -33,8 +33,7 @@ function NewProject() {
 
   return (
     <div className={styles.newproject_container}>
-      <h1>Novo Projeto</h1>
-      <p>Crie seu projeto para depois adicionar os serviços</p>
+      <h1 className={styles.newproject_card}>Novo Projeto</h1>
       <ProjectForm handlerSubmit={createPost} btnText="Adicionar Projeto" />
     </div>
   )

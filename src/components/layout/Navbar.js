@@ -18,10 +18,13 @@ function Navbar() {
             <Link to="/project">Projetos</Link>
           </li>
           <li className={styles.item}>
-            <Link to="/company">Companhia</Link>
+            <Link to="/sector">Setores</Link>
           </li>
           <li className={styles.item}>
-            <Link to="/contact">Contato</Link>
+            <Link to="/material">Material</Link>
+          </li>
+          <li className={styles.item}>
+            <Link to="/colaboradores">Colaboradores</Link>
           </li>
         </ul>
       </Container>

@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './components/pages/Home'
-import Contact from './components/pages/Contact'
-import Company from './components/pages/Company'
+import Colaboradores from './components/pages/Colaboradores'
+import Sector from './components/pages/Sector'
 import NewProject from './components/pages/NewProject'
-import Project from './components/pages/Projects'
+import Projects from './components/pages/Projects'
+import Project from './components/pages/Project'
+import Material from './components/pages/Material'
 
 import Container from './components/layout/Container'
 import Navbar from './components/layout/Navbar'
@@ -18,17 +20,23 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/project">
-            <Project />
+          <Route path="/project">
+            <Projects />
           </Route>
-          <Route exact path="/company">
-            <Company />
+          <Route path="/sector">
+            <Sector />
           </Route>
-          <Route exact path="/contact">
-            <Contact />
+          <Route path="/material">
+            <Material />
           </Route>
-          <Route exact path="/novoconteudo">
+          <Route path="/colaboradores">
+            <Colaboradores />
+          </Route>
+          <Route path="/novoconteudo">
             <NewProject />
+          </Route>
+          <Route path="/projectId/:id">
+            <Project />
           </Route>
         </Container>
       </Switch>
