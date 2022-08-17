@@ -63,6 +63,25 @@
       "cost": 0,
       "services": [],
       "id": 3
+    },
+    {
+      "material": {
+        "id": "3",
+        "name": "Redes"
+      },
+      "name": "Teste",
+      "budget": "1000",
+      "setores": {
+        "id": "2",
+        "name": "Fabrica de Ração"
+      },
+      "category": {
+        "id": "1",
+        "name": "Infraestrutura"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
     }
   ],
   "categories": [

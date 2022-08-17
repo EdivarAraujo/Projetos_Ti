@@ -26,9 +26,6 @@ function App() {
           <Route path="/sector">
             <Sector />
           </Route>
-          <Route path="/material">
-            <Material />
-          </Route>
           <Route path="/colaboradores">
             <Colaboradores />
           </Route>

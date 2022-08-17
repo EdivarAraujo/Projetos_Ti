@@ -10,6 +10,7 @@ import ProjectForm from '../project/ProjectForm'
 import ServiceForm from '../service/ServiceForm'
 import ServiceCard from '../service/ServiceCard'
 import Message from '../layout/Message'
+import Material from './Material'
 
 function Project() {
   //Resgatar os dados do banco para poder fazer edição dos dados, pegando o id pela url
@@ -183,6 +184,7 @@ function Project() {
                     <span>Tipo de Material ultilizado: </span>
                     {project.material.name}
                   </p>
+                  <Material />
                 </div>
               ) : (
                 <div className={styles.project_info}>
@@ -195,6 +197,7 @@ function Project() {
               )}
             </div>
             {/* Adicionar Serviços */}
+
             <div className={styles.servirce_form_container}>
               <h2>Adicione um serviço:</h2>
               {/* vai mostrar o formulario ou não mostrar nada */}
