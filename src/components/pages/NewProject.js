@@ -10,6 +10,7 @@ function NewProject() {
     //iniciar projeto e serviços
     project.cost = 0
     project.services = []
+    project.material.materiais = []
 
     //adicionar os dados no banco de dados atraves do metodo post
     fetch('http://localhost:5000/projects', {

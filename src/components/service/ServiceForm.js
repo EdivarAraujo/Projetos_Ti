@@ -15,7 +15,7 @@ function ServiceForm({ handlerSubmit, btnText, projectData }) {
     handlerSubmit(projectData)
   }
 
-  // pego tudo que tenho tenho do objeto e inserindo o valor para a propriedade, que está dentro do evendo, ou seja vai inserio o valor passado em e.target.nome para algum nome, o  mesmo com e.target.value (handerChange)), vai formando objeto
+  // pego tudo que tenho do objeto e inserindo o valor para a propriedade, que está dentro do evendo, ou seja vai inserio o valor passado em e.target.nome para algum nome, o  mesmo com e.target.value (handerChange)), vai formando objeto
   function handlerChange(e) {
     setService({ ...service, [e.target.name]: e.target.value })
   }

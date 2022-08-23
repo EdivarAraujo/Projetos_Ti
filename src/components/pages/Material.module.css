@@ -16,9 +16,12 @@
 
 .container_mat {
   padding: 1px solid;
-  width: 60%;
+  width: 57%;
   text-align: center;
   margin-left: 5px;
+  border-radius: 3px;
+  border: 1px solid #000;
+  outline: 0;
 }
 .container_qtd {
   width: 7%;
@@ -26,6 +29,15 @@
   padding: 1px solid;
   text-align: center;
   margin-right: 0;
+  border-radius: 3px;
+  outline: 0;
+  border: 1px solid #000;
+}
+.container_vlr {
+  text-align: center;
+  border-radius: 3px;
+  outline: 0;
+  border: 1px solid #000;
 }
 .container_form button {
   background-color: #000;

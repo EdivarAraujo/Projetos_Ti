@@ -1,11 +1,11 @@
 {
   "projects": [
     {
-      "name": "Cftv",
-      "budget": "2000",
+      "name": "teste",
+      "budget": "3333",
       "setores": {
-        "id": "16",
-        "name": "Recria Nova"
+        "id": "17",
+        "name": "Colorado"
       },
       "category": {
         "id": "1",
@@ -13,7 +13,15 @@
       },
       "material": {
         "id": "3",
-        "name": "Redes"
+        "name": "Redes",
+        "materiais": [
+          {
+            "id": 1,
+            "material": "corda",
+            "qtd": "2",
+            "valor": "15"
+          }
+        ]
       },
       "cost": 200,
       "services": [
@@ -21,67 +29,10 @@
           "name": "Teste",
           "cost": "200",
           "description": "Teste",
-          "id": "721cf926-e950-487f-b55b-d22c117feac7"
+          "id": "54d93739-8b37-4428-9dd7-46b67903473e"
         }
       ],
       "id": 1
-    },
-    {
-      "name": "Zabbix",
-      "budget": "1000",
-      "setores": {
-        "id": "1",
-        "name": "Tecnologia da Informação"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "3",
-        "name": "Redes"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "App_Frango",
-      "budget": "2000",
-      "setores": {
-        "id": "8",
-        "name": "Frango"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "3",
-        "name": "Redes"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
-    },
-    {
-      "material": {
-        "id": "3",
-        "name": "Redes"
-      },
-      "name": "Teste",
-      "budget": "1000",
-      "setores": {
-        "id": "2",
-        "name": "Fabrica de Ração"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 4
     }
   ],
   "categories": [

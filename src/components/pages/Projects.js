@@ -35,7 +35,6 @@ function Projects() {
         //ao terminar de carrehar todos os projetos o loadim para de rodar
         .then(resp => resp.json())
         .then(data => {
-          console.log(data)
           setProjects(data)
           setRemoveLoading(true)
         })

@@ -23,6 +23,8 @@ function Project() {
   const [showServiceForm, setShowServiceForm] = useState(false)
   const [message, setMessage] = useState()
   const [type, setType] = useState()
+  const [material, setMaterial] = useState()
+  const [addMaterial, setAddMaterial] = useState({})
 
   //chamar o projeto, monitorando id do projeto, o id entre [] está sendo monitorado(no geral resgata o projeto do banco baseado no parametro da url)
   //o setTimeout simula o carregamento enquanto o projeto não vem
@@ -39,10 +41,46 @@ function Project() {
         .then(data => {
           setProject(data)
           setServices(data.services)
+          setMaterial(data.material.materiais)
         })
         .catch(err => console.log(err))
     }, 300)
   }, [id])
+
+  function test() {
+    const materiasUpdated = project.material.materiais.filter(
+      material => material.id !== id
+    )
+
+    const projectUpdated = project
+    console.log(projectUpdated, 'projetoooooooooo')
+
+    projectUpdated.material.materiais = materiasUpdated
+
+    fetch(`http://localhost:5000/project/${projectUpdated.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(addMaterial)
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        setProject(projectUpdated)
+        setMaterial(materiasUpdated)
+        setMessage('Serviço removido com sucesso')
+        setMessage('')
+      })
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    try {
+      test()
+    } catch (error) {
+      console.log(error.message)
+    }
+  }, [addMaterial])
 
   // função para poder chamar toda a atualização feita em algum projeto apos a edição
   // o metodo PACTH - faz a alteração , atualiza somente o que foi mudado no banco
@@ -184,7 +222,23 @@ function Project() {
                     <span>Tipo de Material ultilizado: </span>
                     {project.material.name}
                   </p>
-                  <Material />
+                  <p>
+                    <span>Material ultilizado: </span>
+                    {material.map(item => {
+                      return (
+                        <ul style={{ display: 'flex' }}>
+                          <li>{item.material}</li>
+                          <li style={{ position: 'absolute', left: 300 }}>
+                            {item.qtd}
+                          </li>
+                          <li style={{ position: 'absolute', left: 400 }}>
+                            {item.valor}
+                          </li>
+                        </ul>
+                      )
+                    })}
+                  </p>
+                  <Material setAddMaterial={setAddMaterial} />
                 </div>
               ) : (
                 <div className={styles.project_info}>

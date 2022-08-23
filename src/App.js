@@ -5,8 +5,6 @@ import Sector from './components/pages/Sector'
 import NewProject from './components/pages/NewProject'
 import Projects from './components/pages/Projects'
 import Project from './components/pages/Project'
-import Material from './components/pages/Material'
-
 import Container from './components/layout/Container'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
