@@ -1,38 +1,115 @@
 {
   "projects": [
     {
-      "name": "teste",
-      "budget": "3333",
+      "name": "Cftv",
+      "budget": "200",
       "setores": {
-        "id": "17",
-        "name": "Colorado"
+        "id": "18",
+        "name": "Laboratorio"
       },
       "category": {
         "id": "1",
         "name": "Infraestrutura"
       },
       "material": {
-        "id": "3",
-        "name": "Redes",
+        "id": "2",
+        "name": "Cftv",
         "materiais": [
           {
             "id": 1,
-            "material": "corda",
-            "qtd": "2",
-            "valor": "15"
+            "material": "boi",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 2,
+            "material": "teste",
+            "qtd": "5461",
+            "valor": "5415"
+          },
+          {
+            "id": 3,
+            "material": "boo",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 4,
+            "material": "1",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 5,
+            "material": "1",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 6,
+            "material": "asdads",
+            "qtd": "11",
+            "valor": "111"
+          },
+          {
+            "id": 7,
+            "material": "11",
+            "qtd": "11",
+            "valor": "111"
+          },
+          {
+            "id": 8,
+            "material": "asdasdasd",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 9,
+            "material": "asdasd",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 10,
+            "material": "asdasdads",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 11,
+            "material": "asdad",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 12,
+            "material": "Tu e bixa",
+            "qtd": "1",
+            "valor": "1"
+          },
+          {
+            "id": 13,
+            "material": "test",
+            "qtd": "41",
+            "valor": "41"
+          },
+          {
+            "id": 14,
+            "material": "pedro",
+            "qtd": "1",
+            "valor": "20"
+          },
+          {
+            "id": 15,
+            "material": "teste78",
+            "qtd": "55",
+            "valor": "55"
           }
         ]
       },
-      "cost": 200,
-      "services": [
-        {
-          "name": "Teste",
-          "cost": "200",
-          "description": "Teste",
-          "id": "54d93739-8b37-4428-9dd7-46b67903473e"
-        }
-      ],
-      "id": 1
+      "cost": 0,
+      "services": [],
+      "id": 2
     }
   ],
   "categories": [

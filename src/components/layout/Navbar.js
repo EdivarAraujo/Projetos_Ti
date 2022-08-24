@@ -12,7 +12,7 @@ function Navbar() {
         </Link>
         <ul className={styles.list}>
           <li class={styles.item}>
-            <Link to="/">Home</Link>
+            <Link to="/">Inicio</Link>
           </li>
           <li className={styles.item}>
             <Link to="/project">Projetos</Link>

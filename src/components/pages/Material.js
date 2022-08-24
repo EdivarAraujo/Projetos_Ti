@@ -1,18 +1,60 @@
 import styles from './Material.module.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
-function Material({ setAddMaterial, submit }) {
+function Material({ projectData, dataMaterial, setAddMaterial, submit }) {
+  const { id: idCurrentProject } = useParams()
   const [material, setMaterial] = useState('')
   const [qtd, setQtd] = useState('')
   const [valor, setValor] = useState('')
 
-  function inserirMaterial(e) {
-    if (material != '' && qtd != '' && valor != '') {
-      setMaterial(material)
-      setQtd(qtd)
-      setValor(valor)
-      submit(1)
-      setAddMaterial({ material, qtd, valor })
+  async function inserirMaterial(e) {
+    // Gerando novo id para o novo material inserido
+    const getLastId = dataMaterial[dataMaterial.length - 1]?.id + 1 || 1
+
+    // Montando a estrutura do novo material a ser inserido
+    const objMaterial = {
+      id: projectData?.material?.id,
+      name: projectData?.material?.name,
+      materiais: [
+        ...dataMaterial,
+        {
+          id: getLastId,
+          material,
+          qtd,
+          valor
+        }
+      ]
+    }
+
+    // Remontando o obj para inserir no projeto expecifico
+    const objUpdate = {
+      name: projectData?.name,
+      budget: projectData?.budget,
+      setores: projectData?.setores,
+      category: projectData?.category,
+      material: objMaterial,
+      cost: projectData?.cost,
+      services: projectData?.services,
+      id: projectData?.id
+    }
+
+    if (material && qtd && valor) {
+      // Atualiza o projeto com o novo material
+      await axios
+        .put(`http://localhost:5000/projects/${idCurrentProject}`, objUpdate)
+        .then(res => {
+          // Atualizando o state com o novo material
+          setAddMaterial(oldData => [
+            ...oldData,
+            { id: getLastId, material, qtd, valor }
+          ])
+        })
+        .catch(err => console.error(err.message))
+      setMaterial('')
+      setQtd('')
+      setValor('')
     } else {
       alert('material invalido')
     }
@@ -21,6 +63,7 @@ function Material({ setAddMaterial, submit }) {
   //tem que será criado sempre e chamado no return para não enviar os dados para a url
   function handlerSubmit(e) {
     e.preventDefault()
+    inserirMaterial()
   }
 
   return (
@@ -51,7 +94,7 @@ function Material({ setAddMaterial, submit }) {
           onChange={e => setValor(e.target.value)}
           value={valor}
         ></input>
-        <button onClick={inserirMaterial} type="submit">
+        <button onClick={handlerSubmit} type="submit">
           Enviar
         </button>
       </form>

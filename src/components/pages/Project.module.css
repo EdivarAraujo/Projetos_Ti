@@ -15,9 +15,61 @@
 .project_details span {
   font-weight: bold;
 }
+.project_materialHeader {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  text-align: center;
+  border: 1px solid;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .projectMaterialHeaderItem1 {
+  width: 100%;
+  display: flex;
+  padding-left: 2%;
+} */
+/* .projectMaterialHeaderItem2 {
+  width: 33.33%;
+}
+
+.projectMaterialHeaderItem3 {
+  width: 33.33%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2%;
+} */
+/* .project_material {
+  text-align: center;
+  border: 0.2px solid #000;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+/* .project_materialItem1 {
+  display: flex;
+  width: 85%;
+  justify-content: start;
+  padding-left: 2%;
+} */
+/* .project_materialItem2 {
+  display: flex;
+  width: 33.33%;
+  justify-content: center;
+  background-color: red;
+}
+
+.project_materialItem3 {
+  display: flex;
+  width: 33.33%;
+  justify-content: end;
+  padding-right: 2%;
+} */
 .details_container,
 .servirce_form_container {
-  border-bottom: 1px solid #7a7a7a;
+  border-bottom: 1px solid #000;
   margin-bottom: 1.2em;
   padding-bottom: 1.2em;
   display: flex;
@@ -32,11 +84,58 @@
   transition: 0.5s;
   cursor: pointer;
   max-height: 40px;
-  /* border-radius: 1px; */
+  border-radius: 1px;
 }
 .btn:hover {
   color: #ff5833;
 }
 .project_info {
   width: 100%;
+}
+
+/* Tabela de materiais */
+.tableMaterial {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableMaterial td,
+.tableMaterial th {
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: #fff;
+  text-align: center;
+  border-color: #0e0c0c;
+}
+
+.tableMaterial tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tableMaterial tr:hover {
+  background-color: #ddd;
+}
+
+.tableMaterial th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #ffff;
+  color: #fff;
+  background-color: rgb(11, 12, 10);
+}
+.buttonRemoveMaterial {
+  width: 5rem;
+  background-color: #196ec9;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+}
+.tableMaterial button:hover {
+  background-color: rgb(226, 64, 64);
+}
+
+.buttonRemoveMaterial span {
+  color: #fff;
 }
