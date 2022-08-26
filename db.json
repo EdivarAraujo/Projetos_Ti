@@ -1,115 +1,24 @@
 {
   "projects": [
     {
-      "name": "Cftv",
-      "budget": "200",
+      "name": "Teste",
+      "budget": "232",
       "setores": {
-        "id": "18",
-        "name": "Laboratorio"
+        "id": "17",
+        "name": "Colorado"
       },
       "category": {
-        "id": "1",
-        "name": "Infraestrutura"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "material": {
-        "id": "2",
-        "name": "Cftv",
-        "materiais": [
-          {
-            "id": 1,
-            "material": "boi",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 2,
-            "material": "teste",
-            "qtd": "5461",
-            "valor": "5415"
-          },
-          {
-            "id": 3,
-            "material": "boo",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 4,
-            "material": "1",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 5,
-            "material": "1",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 6,
-            "material": "asdads",
-            "qtd": "11",
-            "valor": "111"
-          },
-          {
-            "id": 7,
-            "material": "11",
-            "qtd": "11",
-            "valor": "111"
-          },
-          {
-            "id": 8,
-            "material": "asdasdasd",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 9,
-            "material": "asdasd",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 10,
-            "material": "asdasdads",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 11,
-            "material": "asdad",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 12,
-            "material": "Tu e bixa",
-            "qtd": "1",
-            "valor": "1"
-          },
-          {
-            "id": 13,
-            "material": "test",
-            "qtd": "41",
-            "valor": "41"
-          },
-          {
-            "id": 14,
-            "material": "pedro",
-            "qtd": "1",
-            "valor": "20"
-          },
-          {
-            "id": 15,
-            "material": "teste78",
-            "qtd": "55",
-            "valor": "55"
-          }
-        ]
+        "id": "3",
+        "name": "Redes",
+        "materiais": []
       },
       "cost": 0,
       "services": [],
-      "id": 2
+      "id": 1
     }
   ],
   "categories": [
@@ -146,6 +55,24 @@
     {
       "id": 6,
       "tipo": "Outros"
+    }
+  ],
+  "medidas": [
+    {
+      "id": 1,
+      "unidade": "KG"
+    },
+    {
+      "id": 2,
+      "unidade": "M"
+    },
+    {
+      "id": 3,
+      "unidade": "UN"
+    },
+    {
+      "id": 4,
+      "unidade": "PC"
     }
   ],
   "setores": [

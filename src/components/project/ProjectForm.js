@@ -103,7 +103,6 @@ function ProjectForm({ handlerSubmit, btnText, projectData }) {
       }
     })
   }
-
   return (
     <div>
       <form onSubmit={submit} className={styles.form}>

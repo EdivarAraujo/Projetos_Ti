@@ -1,8 +1,12 @@
 import { parse, v4 as uuidv4 } from 'uuid'
 
+import Swal from 'sweetalert2'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import styles from './Project.module.css'
 import './Project.module.css'
 //resgatar algo do db via algum parametro
+import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Loading from '../layout/Loading'
@@ -25,6 +29,7 @@ function Project() {
   const [message, setMessage] = useState()
   const [type, setType] = useState()
   const [material, setMaterial] = useState()
+  const [removematerial, setRemoveMaterial] = useState('')
   // const [addMaterial, setAddMaterial] = useState({})
 
   //chamar o projeto, monitorando id do projeto, o id entre [] está sendo monitorado(no geral resgata o projeto do banco baseado no parametro da url)
@@ -46,42 +51,7 @@ function Project() {
         })
         .catch(err => console.log(err))
     }, 300)
-  }, [id])
-
-  // function test() {
-  //   const materiasUpdated = project.material.materiais.filter(
-  //     material => material.id !== id
-  //   )
-
-  //   const projectUpdated = project
-  //   console.log(projectUpdated, 'projetoooooooooo')
-
-  //   projectUpdated.material.materiais = materiasUpdated
-
-  //   fetch(`http://localhost:5000/project/${projectUpdated.id}`, {
-  //     method: 'PATCH',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(addMaterial)
-  //   })
-  //     .then(resp => resp.json())
-  //     .then(data => {
-  //       setProject(projectUpdated)
-  //       setMaterial(materiasUpdated)
-  //       setMessage('Serviço removido com sucesso')
-  //       setMessage('')
-  //     })
-  //     .catch(err => console.log(err))
-  // }
-
-  // useEffect(() => {
-  //   try {
-  //     test()
-  //   } catch (error) {
-  //     console.log(error.message)
-  //   }
-  // }, [addMaterial])
+  }, [id, material])
 
   // função para poder chamar toda a atualização feita em algum projeto apos a edição
   // o metodo PACTH - faz a alteração , atualiza somente o que foi mudado no banco
@@ -181,6 +151,43 @@ function Project() {
       .catch(err => console.log(err))
   }
 
+  //função para remover um item da lista de materiais pelo id do material
+  function removeMaterial(id) {
+    //pegar o id que é diferente do id material
+    const filterMaterial = material.filter(material => material.id !== id)
+    //acessar as propriedades do projetoUpdate
+    const projectUpdated = project
+    projectUpdated.material.materiais = filterMaterial
+
+    //chamada da api
+    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(projectUpdated)
+    })
+      .then(resp => resp.json)
+      .then(result => {
+        setProject(projectUpdated)
+        setMaterial(filterMaterial)
+
+        // toast.success('Removido com sucesso', { theme: 'colored' })
+        //mensagem de remoçao de projeto apos a requisição está finalizada
+      })
+  }
+  function openAlert(id) {
+    Swal.fire({
+      title: 'Remover este item?',
+      showCancelButton: true,
+      confirmButtonText: 'Remover',
+      cancelButtonText: `Cancelar`
+    }).then(result => {
+      if (result.isConfirmed) {
+        removeMaterial(id)
+        Swal.fire('Salvo!', '', 'success')
+      }
+    })
+  }
+
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
   }
@@ -230,19 +237,24 @@ function Project() {
                       <tr>
                         <th>Material</th>
                         <th>Quantidade</th>
+                        <th>U.Medida</th>
                         <th>Valor R$</th>
                         <th>Remover</th>
                       </tr>
                       {material?.map(item => {
+                        const idMaterial = item.id
                         return (
                           <tr>
                             <td>{item?.material}</td>
                             <td>{item?.qtd}</td>
+                            <td>{item?.medida?.name}</td>
                             <td>{item?.valor}</td>
                             <td>
                               <button
                                 className={styles.buttonRemoveMaterial}
-                                onClick={() => alert(`Remover ${item?.id}`)}
+                                onClick={() => {
+                                  openAlert(idMaterial)
+                                }}
                               >
                                 <span className={styles.iconRemove}>
                                   <span>Remover</span>
@@ -253,36 +265,6 @@ function Project() {
                         )
                       })}
                     </table>
-
-                    {/* {false && (
-                      <div className={styles.project_materialHeader}>
-                        <div className={styles.projectMaterialHeaderItem1}>
-                          Material
-                        </div>
-                        <div className={styles.projectMaterialHeaderItem2}>
-                          Quantidade
-                        </div>
-                        <div className={styles.projectMaterialHeaderItem3}>
-                          Valor
-                        </div>
-                      </div>
-                    )} */}
-                    {/* {false &&
-                      material?.map(item => {
-                        return (
-                          <div className={styles.project_material}>
-                            <div className={styles.project_materialItem1}>
-                              {item.material}
-                            </div>
-                            <div className={styles.project_materialItem2}>
-                              {item.qtd}
-                            </div>
-                            <div className={styles.project_materialItem3}>
-                              {item.valor}
-                            </div>
-                          </div>
-                        )
-                      })} */}
                   </p>
                   <Material
                     projectData={project}
@@ -303,10 +285,10 @@ function Project() {
             {/* Adicionar Serviços */}
 
             <div className={styles.servirce_form_container}>
-              <h2>Adicione um serviço:</h2>
+              <h2>Adicione um serviço</h2>
               {/* vai mostrar o formulario ou não mostrar nada */}
               <button className={styles.btn} onClick={toggleServiceForm}>
-                {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
+                {!showServiceForm ? 'Adicionar' : 'Fechar'}
               </button>
               <div className={styles.project_info}>
                 {/* se o showServiceForm tiver habilitado vamos qurer exibir o formulario */}
