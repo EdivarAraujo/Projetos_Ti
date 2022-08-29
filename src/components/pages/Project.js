@@ -51,7 +51,7 @@ function Project() {
         })
         .catch(err => console.log(err))
     }, 300)
-  }, [id, material])
+  }, [id])
 
   // função para poder chamar toda a atualização feita em algum projeto apos a edição
   // o metodo PACTH - faz a alteração , atualiza somente o que foi mudado no banco
