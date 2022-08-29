@@ -1,42 +1,49 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './components/pages/Home'
-import Colaboradores from './components/pages/Colaboradores'
-import Sector from './components/pages/Sector'
-import NewProject from './components/pages/NewProject'
-import Projects from './components/pages/Projects'
-import Project from './components/pages/Project'
-import Container from './components/layout/Container'
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+import Login from './pages/Login'
+
+import Home from './pages/Home/index'
+import Colaboradores from './pages/Colaboradores/index'
+import Sector from './pages/Sector'
+import NewProject from './pages/NewProject'
+import MeusProjetos from './pages/MeusProjetos/index'
+import Project from './pages/Project'
+import Container from './components/Layout/Container'
+import Navbar from './components/Layout/Navbar'
+import Footer from './components/Layout/Footer'
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Container customClass="min-height">
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/project">
-            <Projects />
-          </Route>
-          <Route path="/sector">
-            <Sector />
-          </Route>
-          <Route path="/colaboradores">
-            <Colaboradores />
-          </Route>
-          <Route path="/novoconteudo">
-            <NewProject />
-          </Route>
-          <Route path="/projectId/:id">
-            <Project />
-          </Route>
-        </Container>
-      </Switch>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Container customClass="min-height">
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/project">
+              <MeusProjetos />
+            </Route>
+            <Route path="/sector">
+              <Sector />
+            </Route>
+            <Route path="/colaboradores">
+              <Colaboradores />
+            </Route>
+            <Route path="/novoconteudo">
+              <NewProject />
+            </Route>
+            <Route path="/projectId/:id">
+              <Project />
+            </Route>
+          </Container>
+        </Switch>
+      </Router>
       <Footer />
-    </Router>
+    </>
   )
 }
 

@@ -1,11 +1,11 @@
 {
   "projects": [
     {
-      "name": "Teste",
-      "budget": "232",
+      "name": "tr",
+      "budget": "23",
       "setores": {
-        "id": "17",
-        "name": "Colorado"
+        "id": "15",
+        "name": "Indiano"
       },
       "category": {
         "id": "2",
@@ -14,11 +14,102 @@
       "material": {
         "id": "3",
         "name": "Redes",
+        "materiais": [
+          {
+            "id": 1,
+            "material": "fgdfgdfgd",
+            "medida": {
+              "id": 3,
+              "name": "UN"
+            },
+            "qtd": "45345",
+            "valor": "53434.00"
+          }
+        ]
+      },
+      "cost": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "name": "aoba",
+      "budget": "500000",
+      "setores": {
+        "id": "11",
+        "name": "Buriti"
+      },
+      "cost": 0,
+      "services": [],
+      "category": {
+        "id": "1",
+        "name": "Infraestrutura"
+      },
+      "material": {
+        "id": "2",
+        "name": "Ferragens",
+        "materiais": []
+      },
+      "id": 4
+    },
+    {
+      "name": "teste",
+      "budget": "524",
+      "setores": {
+        "id": "16",
+        "name": "Recria Nova"
+      },
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "material": {
+        "id": "2",
+        "name": "Ferragens",
         "materiais": []
       },
       "cost": 0,
       "services": [],
-      "id": 1
+      "id": 5
+    },
+    {
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "name": "trgger",
+      "budget": "7367",
+      "setores": {
+        "id": "15",
+        "name": "Indiano"
+      },
+      "material": {
+        "id": "1",
+        "name": "Cftv",
+        "materiais": []
+      },
+      "cost": 0,
+      "services": [],
+      "id": 6
+    },
+    {
+      "name": "frgdfg",
+      "budget": "75752",
+      "setores": {
+        "id": "8",
+        "name": "Frango"
+      },
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "material": {
+        "id": "2",
+        "name": "Ferragens",
+        "materiais": []
+      },
+      "cost": 0,
+      "services": [],
+      "id": 7
     }
   ],
   "categories": [
@@ -29,6 +120,14 @@
     {
       "id": 2,
       "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
     }
   ],
   "material": [

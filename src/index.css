@@ -7,7 +7,10 @@
 html,
 body,
 #root {
+  display: flex;
   /* background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p3/2011966-moderno-abstrato-gradiente-geometrico-fundo-adequado-para-papel-de-parede-banner-fundo-cartao-livro-ilustracao-pagina-de-destino-presente-capa-folheto-relatorio-negocio-midia-social-gr%C3%A1tis-vetor.jpg'); */
   background: linear-gradient(to right, rgb(133, 200, 232), rgb(133, 200, 232));
   height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
