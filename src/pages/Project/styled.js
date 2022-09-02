@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const ContainerStyled = styled.div`
-  padding: 1% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
 
   h1 {
     background-color: #000;
@@ -22,6 +25,7 @@ export const ContainerStyled = styled.div`
     margin-bottom: 1.2em;
     padding-bottom: 1.2em;
     display: flex;
+    height: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
   }

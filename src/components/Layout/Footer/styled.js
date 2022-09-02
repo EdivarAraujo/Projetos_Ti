@@ -11,16 +11,18 @@ export const Container = styled.div`
     justify-content: center;
     list-style-type: none;
 
-    li {
+    a {
       margin: 0 1em;
-      &:hover {
-        color: #ff5833;
-      }
     }
 
     svg {
+      color: black;
       font-size: 1.5em;
       cursor: pointer;
+
+      &:hover {
+        color: #ff5833;
+      }
     }
   }
 

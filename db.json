@@ -38,8 +38,6 @@
         "id": "11",
         "name": "Buriti"
       },
-      "cost": 0,
-      "services": [],
       "category": {
         "id": "1",
         "name": "Infraestrutura"
@@ -47,8 +45,48 @@
       "material": {
         "id": "2",
         "name": "Ferragens",
-        "materiais": []
+        "materiais": [
+          {
+            "id": 1,
+            "material": "kghjk",
+            "medida": {
+              "id": 2,
+              "name": "M"
+            },
+            "qtd": "5745",
+            "valor": "454532.00"
+          },
+          {
+            "id": 2,
+            "material": "5345",
+            "medida": {
+              "id": 2,
+              "name": "M"
+            },
+            "qtd": "45",
+            "valor": "45.00"
+          },
+          {
+            "id": 3,
+            "material": "yjftj",
+            "medida": {
+              "id": 2,
+              "name": "M"
+            },
+            "qtd": "75867",
+            "valor": "7567.00"
+          }
+        ]
       },
+      "cost": 565,
+      "services": [
+        {
+          "name": "67567u",
+          "cost": "565",
+          "description": "6765767",
+          "id": "cfaa2f7b-17c5-4823-adb4-c9caf4a359be"
+        }
+      ],
       "id": 4
     },
     {
@@ -65,27 +103,56 @@
       "material": {
         "id": "2",
         "name": "Ferragens",
-        "materiais": []
+        "materiais": [
+          {
+            "id": 1,
+            "material": "gfbdf",
+            "medida": {
+              "id": 1,
+              "name": "KG"
+            },
+            "qtd": "41",
+            "valor": "414.00"
+          }
+        ]
       },
-      "cost": 0,
-      "services": [],
+      "cost": 41,
+      "services": [
+        {
+          "name": "234",
+          "cost": "41",
+          "description": "1",
+          "id": "92b938b7-5ca4-4703-86fd-a9725d21acae"
+        }
+      ],
       "id": 5
     },
     {
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
       "name": "trgger",
       "budget": "7367",
       "setores": {
         "id": "15",
         "name": "Indiano"
       },
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
       "material": {
         "id": "1",
         "name": "Cftv",
-        "materiais": []
+        "materiais": [
+          {
+            "id": 1,
+            "material": "JTYJ",
+            "medida": {
+              "id": 1,
+              "name": "KG"
+            },
+            "qtd": "42",
+            "valor": "424.00"
+          }
+        ]
       },
       "cost": 0,
       "services": [],
@@ -110,6 +177,93 @@
       "cost": 0,
       "services": [],
       "id": 7
+    },
+    {
+      "name": "Teste",
+      "budget": "500",
+      "setores": {
+        "id": "18",
+        "name": "Laboratorio"
+      },
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "material": {
+        "id": "3",
+        "name": "Redes",
+        "materiais": []
+      },
+      "cost": null,
+      "services": [
+        {
+          "name": "teste",
+          "cost": "411",
+          "description": "4141",
+          "id": "a2f9d9b8-dc2a-40b5-b694-2208c60a09a9"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "name": "teste",
+      "budget": "11",
+      "setores": {
+        "id": "17",
+        "name": "Colorado"
+      },
+      "category": {
+        "id": "1",
+        "name": "Infraestrutura"
+      },
+      "material": {
+        "id": "2",
+        "name": "Ferragens",
+        "materiais": []
+      },
+      "cost": 0,
+      "services": [],
+      "id": 9
+    },
+    {
+      "name": "teste",
+      "budget": "11",
+      "setores": {
+        "id": "17",
+        "name": "Colorado"
+      },
+      "category": {
+        "id": "1",
+        "name": "Infraestrutura"
+      },
+      "material": {
+        "id": "2",
+        "name": "Ferragens",
+        "materiais": []
+      },
+      "cost": 0,
+      "services": [],
+      "id": 10
+    },
+    {
+      "cost": 0,
+      "services": [],
+      "name": "teste",
+      "budget": "3",
+      "setores": {
+        "id": "14",
+        "name": "Patati"
+      },
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "material": {
+        "id": "2",
+        "name": "Ferragens",
+        "materiais": []
+      },
+      "id": 11
     }
   ],
   "categories": [
@@ -254,6 +408,78 @@
     {
       "id": 20,
       "setor": "Outros"
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "w",
+      "password": "w",
+      "id": 1
+    },
+    {
+      "email": "q",
+      "password": "q",
+      "id": 2
+    },
+    {
+      "email": "q",
+      "password": "q",
+      "id": 3
+    },
+    {
+      "email": "tey",
+      "password": "1",
+      "id": 4
+    },
+    {
+      "email": "a",
+      "password": "a",
+      "id": 5
+    },
+    {
+      "email": "aa",
+      "password": "a1",
+      "id": 6
+    },
+    {
+      "email": "teste",
+      "password": "11",
+      "id": 7
+    },
+    {
+      "email": "teste",
+      "password": "11",
+      "id": 8
+    },
+    {
+      "email": "r",
+      "password": "r",
+      "id": 9
+    },
+    {
+      "email": "t",
+      "password": "t",
+      "id": 10
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "123123",
+      "id": 11
+    },
+    {
+      "email": "a",
+      "password": "a",
+      "id": 12
+    },
+    {
+      "email": "y",
+      "password": "y",
+      "id": 13
+    },
+    {
+      "email": "e",
+      "password": "e",
+      "id": 14
     }
   ]
 }

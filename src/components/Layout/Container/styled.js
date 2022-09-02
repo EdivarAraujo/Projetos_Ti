@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const ContainerStyled = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   flex-wrap: wrap;
 
