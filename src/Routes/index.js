@@ -12,6 +12,7 @@ import useAuth from '../pages/hooks/useAuth'
 import Signup from '../pages/Signup'
 import Home from '../pages/Home/index'
 
+// return - se tiver autenticado vai para as rotas privadas se não retorna para a tela de login
 const Private = ({ Item }) => {
   const { isAuth } = useAuth()
 
