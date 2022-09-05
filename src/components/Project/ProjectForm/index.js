@@ -5,42 +5,48 @@ import Select from '../../Form/Select'
 import SubmitButton from '../../Form/BtnSubmit'
 import api from '../../../Service/api'
 
-async function ProjectForm({ handlerSubmit, btnText, projectData }) {
+function ProjectForm({ handlerSubmit, btnText, projectData }) {
   const [categories, setCategories] = useState([])
   const [material, setMaterial] = useState([])
   const [setores, setSetores] = useState([])
   //pega do formulario de edição, vai preencher o state, se não é vasio e preencha na ,mão nos input
   const [project, setProject] = useState(projectData || {})
 
-  //seta todas as opçõs dos tipos de categorias disponiveis
-  await api
-    .get('/categories')
-    .then(({ data }) => {
-      setCategories(data)
-    })
-    .catch(err => {
-      console.error(err)
-    })
+  useEffect(() => {
+    changeData()
+  }, [])
 
-  //seta todas as opções dos tipos de materiais
-  await api
-    .get('/material')
-    .then(({ data }) => {
-      setMaterial(data)
-    })
-    .catch(err => {
-      console.error(err)
-    })
+  async function changeData() {
+    //seta todas as opções dos tipos de materias
+    await api
+      .get('/material')
+      .then(data => {
+        setMaterial(data?.data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
 
-  //seta todas as opções de quais são os setores
-  await api
-    .get('/setores')
-    .then(({ data }) => {
-      setSetores(data)
-    })
-    .catch(err => {
-      console.error(err)
-    })
+    //seta todas as opçõs dos tipos de categorias disponiveis
+    await api
+      .get('/categories')
+      .then(data => {
+        setCategories(data?.data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+
+    //seta todas as opções de quais são os setores
+    await api
+      .get('/setores')
+      .then(data => {
+        setSetores(data?.data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
 
   //tira o padrão do formulario
   const submit = e => {
