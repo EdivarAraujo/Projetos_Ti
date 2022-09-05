@@ -1,42 +1,10 @@
 {
   "projects": [
     {
-      "name": "tr",
-      "budget": "23",
+      "name": "Cftv",
       "setores": {
-        "id": "15",
-        "name": "Indiano"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "3",
-        "name": "Redes",
-        "materiais": [
-          {
-            "id": 1,
-            "material": "fgdfgdfgd",
-            "medida": {
-              "id": 3,
-              "name": "UN"
-            },
-            "qtd": "45345",
-            "valor": "53434.00"
-          }
-        ]
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
-    },
-    {
-      "name": "aoba",
-      "budget": "500000",
-      "setores": {
-        "id": "11",
-        "name": "Buriti"
+        "id": "13",
+        "name": "Recria Velha"
       },
       "category": {
         "id": "1",
@@ -45,425 +13,50 @@
       "material": {
         "id": "2",
         "name": "Ferragens",
-        "materiais": [
-          {
-            "id": 1,
-            "material": "kghjk",
-            "medida": {
-              "id": 2,
-              "name": "M"
-            },
-            "qtd": "5745",
-            "valor": "454532.00"
-          },
-          {
-            "id": 2,
-            "material": "5345",
-            "medida": {
-              "id": 2,
-              "name": "M"
-            },
-            "qtd": "45",
-            "valor": "45.00"
-          },
-          {
-            "id": 3,
-            "material": "yjftj",
-            "medida": {
-              "id": 2,
-              "name": "M"
-            },
-            "qtd": "75867",
-            "valor": "7567.00"
-          }
-        ]
+        "materiais": []
       },
-      "cost": 565,
-      "services": [
-        {
-          "name": "67567u",
-          "cost": "565",
-          "description": "6765767",
-          "id": "cfaa2f7b-17c5-4823-adb4-c9caf4a359be"
-        }
-      ],
+      "budget": "500",
+      "cost": 0,
+      "services": [],
       "id": 4
     },
     {
-      "name": "teste",
-      "budget": "524",
+      "name": "Teste",
+      "budget": "69000",
       "setores": {
-        "id": "16",
-        "name": "Recria Nova"
+        "id": "12",
+        "name": "Vacaria"
       },
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "1",
+        "name": "Infraestrutura"
       },
       "material": {
-        "id": "2",
-        "name": "Ferragens",
+        "id": "4",
+        "name": "Telefonia",
         "materiais": [
           {
             "id": 1,
-            "material": "gfbdf",
+            "material": "teste",
             "medida": {
-              "id": 1,
-              "name": "KG"
+              "id": 2,
+              "name": "M"
             },
-            "qtd": "41",
-            "valor": "414.00"
+            "qtd": "50",
+            "valor": "500.00"
           }
         ]
       },
-      "cost": 41,
+      "cost": 500,
       "services": [
         {
-          "name": "234",
-          "cost": "41",
-          "description": "1",
-          "id": "92b938b7-5ca4-4703-86fd-a9725d21acae"
+          "name": "Teste",
+          "cost": "500",
+          "description": "teste",
+          "id": "eb051ea5-c560-4ead-8fe7-96d4b69c77dd"
         }
       ],
       "id": 5
-    },
-    {
-      "name": "trgger",
-      "budget": "7367",
-      "setores": {
-        "id": "15",
-        "name": "Indiano"
-      },
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "material": {
-        "id": "1",
-        "name": "Cftv",
-        "materiais": [
-          {
-            "id": 1,
-            "material": "JTYJ",
-            "medida": {
-              "id": 1,
-              "name": "KG"
-            },
-            "qtd": "42",
-            "valor": "424.00"
-          }
-        ]
-      },
-      "cost": 0,
-      "services": [],
-      "id": 6
-    },
-    {
-      "name": "frgdfg",
-      "budget": "75752",
-      "setores": {
-        "id": "8",
-        "name": "Frango"
-      },
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 7
-    },
-    {
-      "name": "Teste",
-      "budget": "500",
-      "setores": {
-        "id": "18",
-        "name": "Laboratorio"
-      },
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "material": {
-        "id": "3",
-        "name": "Redes",
-        "materiais": []
-      },
-      "cost": null,
-      "services": [
-        {
-          "name": "teste",
-          "cost": "411",
-          "description": "4141",
-          "id": "a2f9d9b8-dc2a-40b5-b694-2208c60a09a9"
-        }
-      ],
-      "id": 8
-    },
-    {
-      "name": "teste",
-      "budget": "11",
-      "setores": {
-        "id": "17",
-        "name": "Colorado"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 9
-    },
-    {
-      "name": "teste",
-      "budget": "11",
-      "setores": {
-        "id": "17",
-        "name": "Colorado"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 10
-    },
-    {
-      "cost": 0,
-      "services": [],
-      "name": "teste",
-      "budget": "3",
-      "setores": {
-        "id": "14",
-        "name": "Patati"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "id": 11
-    },
-    {
-      "name": "Tetste",
-      "budget": "5000",
-      "setores": {
-        "id": "4",
-        "name": "Escritorio"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 12
-    },
-    {
-      "name": "Tetste",
-      "budget": "5000",
-      "setores": {
-        "id": "4",
-        "name": "Escritorio"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 13
-    },
-    {
-      "name": "Tetste",
-      "budget": "5000",
-      "setores": {
-        "id": "4",
-        "name": "Escritorio"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 14
-    },
-    {
-      "name": "Tetste",
-      "budget": "5000",
-      "setores": {
-        "id": "4",
-        "name": "Escritorio"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 15
-    },
-    {
-      "name": "Tetste",
-      "budget": "5000",
-      "setores": {
-        "id": "4",
-        "name": "Escritorio"
-      },
-      "category": {
-        "id": "1",
-        "name": "Infraestrutura"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 16
-    },
-    {
-      "name": "teste11",
-      "budget": "5000",
-      "setores": {
-        "id": "3",
-        "name": "Almoxarifado"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "1",
-        "name": "Cftv",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 17
-    },
-    {
-      "name": "teste11",
-      "budget": "5000",
-      "setores": {
-        "id": "3",
-        "name": "Almoxarifado"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "1",
-        "name": "Cftv",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 18
-    },
-    {
-      "name": "teste11",
-      "budget": "5000",
-      "setores": {
-        "id": "3",
-        "name": "Almoxarifado"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "1",
-        "name": "Cftv",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 19
-    },
-    {
-      "name": "Teste",
-      "budget": "4000",
-      "setores": {
-        "id": "6",
-        "name": "Caju"
-      },
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "material": {
-        "id": "3",
-        "name": "Redes",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 20
-    },
-    {
-      "name": "cfvxcvxv",
-      "budget": "545",
-      "setores": {
-        "id": "5",
-        "name": "Classificação"
-      },
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "material": {
-        "id": "2",
-        "name": "Ferragens",
-        "materiais": []
-      },
-      "cost": 0,
-      "services": [],
-      "id": 21
     }
   ],
   "categories": [
@@ -680,6 +273,11 @@
       "email": "e",
       "password": "e",
       "id": 14
+    },
+    {
+      "email": "A",
+      "password": "A",
+      "id": 15
     }
   ]
 }

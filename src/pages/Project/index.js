@@ -4,7 +4,6 @@ import Swal from 'sweetalert2'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 //resgatar algo do db via algum parametro
-import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Loading from '../../components/Layout/Loading'
@@ -14,6 +13,7 @@ import ServiceForm from '../../components/Service/ServiceForm'
 import ServiceCard from '../../components/Service/ServiceCard'
 import Message from '../../components/Layout/Message'
 import Material from '../Material/index'
+import api from '../../Service/api'
 
 import { ContainerStyled } from './styled'
 
@@ -31,62 +31,50 @@ function Project() {
   const [material, setMaterial] = useState()
   const [reload, setReload] = useState(false)
 
-  //chamar o projeto, monitorando id do projeto, o id entre [] está sendo monitorado(no geral resgata o projeto do banco baseado no parametro da url)
-  //o setTimeout simula o carregamento enquanto o projeto não vem
-  function getProjetos() {
-    setTimeout(() => {
-      fetch(`http://localhost:5000/projects/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        //o then pega a resposta e tranforma em jsom, depois pega o dato para ultilizar para alagum fim
-        .then(resp => resp.json())
-        .then(data => {
-          setProject(data)
-          setServices(data.services)
-          setMaterial(data.material.materiais)
-        })
-        .catch(err => console.log(err))
-    }, 300)
-  }
-
   useEffect(() => {
     getProjetos()
   }, [reload])
+  //chamar o projeto, monitorando id do projeto, o id entre [] está sendo monitorado(no geral resgata o projeto do banco baseado no parametro da url)
+  async function getProjetos() {
+    await api
+      .get(`/projects/${id}`)
+      .then(({ data }) => {
+        setProject(data)
+        setServices(data.services)
+        setMaterial(data.material.materiais)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
   // função para poder chamar toda a atualização feita em algum projeto apos a edição
   // o metodo PACTH - faz a alteração , atualiza somente o que foi mudado no banco
-  // headers faz a comunicação com a Api
-  // body envia os dados
   // o then tras alguma resposta, pega os dados em jsom e passa para data, com os dados ja atualizados, depois esconde o formulario e exibe uma mensagem de confimação
-  function editPost(project) {
+  async function editPost(project) {
     setMessage('')
-    //budget validação
     if (project.budget < project.cost) {
       setMessage('O orçamento não pode ser menor que o custo do projeto!!')
       setType('error')
       return false
     }
-    fetch(`http://localhost:5000/projects/${project.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(project)
-    })
-      .then(resp => resp.json())
-      .then(data => {
+    await api
+      .patch(`/projects/${project.id}`, project)
+      .then(({ data }) => {
+        console.log(data)
         setProject(data)
+
         setShowProjectForm(false)
         setMessage('Projeto atualizado com sucesso!!')
         setType('success')
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   //projeto manipulado depois do serviceForm(update no projeto adicionando serviços)
-  function createService(project) {
+  async function createService(project) {
     setMessage('')
     //pegar ultimo serviço
     const lastService = project.services[project.services.length - 1]
@@ -109,25 +97,20 @@ function Project() {
 
     //atualizar projeto
     //Patch, atualiza dados parciais do projeto
-    //body, envia os dados a serem atualizados
     //then os dados são retornados, a resposta e tranformada em jsom e tem acesso aos dados
-    fetch(`http://localhost:5000/projects/${project.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(project)
-    })
-      .then(resp => resp.json())
-      .then(data => {
+    await api
+      .patch(`/projects/${project.id}`)
+      .then(({ data }) => {
         setShowServiceForm(false)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   //criando atualização no front do serviço apaos remover algum serviço
   // removendo o custo do serviço do custo do projeto
-  function removeService(id, cost) {
+  async function removeService(id, cost) {
     const servicesUpdated = project.services.filter(
       service => service.id !== id
     )
@@ -136,44 +119,36 @@ function Project() {
     projectUpdated.services = servicesUpdated
     projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
-    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(projectUpdated)
-    })
-      .then(resp => resp.json())
-      .then(data => {
+    await api
+      .patch(`/projects/${projectUpdated.id}`)
+      .then(({ data }) => {
         setProject(projectUpdated)
         setServices(servicesUpdated)
         setMessage('Serviço removido com sucesso')
         setMessage('')
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   //função para remover um item da lista de materiais pelo id do material
-  function removeMaterial(id) {
-    //pegar o id que é diferente do id material
+  //pegar o id que é diferente do id material
+  //acessar as propriedades do projetoUpdate
+  async function removeMaterial(id) {
     const filterMaterial = material.filter(material => material.id !== id)
-    //acessar as propriedades do projetoUpdate
     const projectUpdated = project
     projectUpdated.material.materiais = filterMaterial
 
     //chamada da api
-    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(projectUpdated)
-    })
-      .then(resp => resp.json)
-      .then(result => {
+    await api
+      .patch(`/projects/${projectUpdated.id}`)
+      .then(({ data }) => {
         setProject(projectUpdated)
         setMaterial(filterMaterial)
-
-        // toast.success('Removido com sucesso', { theme: 'colored' })
-        //mensagem de remoçao de projeto apos a requisição está finalizada
+      })
+      .catch(err => {
+        console.error(err)
       })
   }
   function openAlert(id) {

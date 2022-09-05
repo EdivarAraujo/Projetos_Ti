@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Select from '../../components/Form/Select'
 import { Container } from './styled'
+import api from '../../Service/api'
 
 function Material({
   projectData,
@@ -22,20 +23,19 @@ function Material({
   const [medida, setMedida] = useState({})
 
   useEffect(() => {
-    fetch('http://localhost:5000/medidas', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(resp => resp.json())
-      .then(data => {
+    buscarMedidas()
+  }, [])
+
+  async function buscarMedidas() {
+    await api
+      .get('/medidas')
+      .then(({ data }) => {
         setMedidas(data)
       })
       .catch(err => {
         console.error(err)
       })
-  }, [])
+  }
 
   //seta o tipo da categoria
   function handlerMedidas(e) {
