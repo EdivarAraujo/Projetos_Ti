@@ -3,8 +3,9 @@ import { Container } from './styled'
 import Input from '../../Form/Input'
 import Select from '../../Form/Select'
 import SubmitButton from '../../Form/BtnSubmit'
+import api from '../../../Service/api'
 
-function ProjectForm({ handlerSubmit, btnText, projectData }) {
+async function ProjectForm({ handlerSubmit, btnText, projectData }) {
   const [categories, setCategories] = useState([])
   const [material, setMaterial] = useState([])
   const [setores, setSetores] = useState([])
@@ -12,55 +13,34 @@ function ProjectForm({ handlerSubmit, btnText, projectData }) {
   const [project, setProject] = useState(projectData || {})
 
   //seta todas as opçõs dos tipos de categorias disponiveis
-  useEffect(() => {
-    fetch('http://localhost:5000/categories', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+  await api
+    .get('/categories')
+    .then(({ data }) => {
+      setCategories(data)
     })
-      .then(resp => resp.json())
-      .then(data => {
-        setCategories(data)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [])
+    .catch(err => {
+      console.error(err)
+    })
 
-  //seta todas as opções dos tipos de materias
-  useEffect(() => {
-    fetch('http://localhost:5000/material', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+  //seta todas as opções dos tipos de materiais
+  await api
+    .get('/material')
+    .then(({ data }) => {
+      setMaterial(data)
     })
-      .then(resp => resp.json())
-      .then(data => {
-        setMaterial(data)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [])
+    .catch(err => {
+      console.error(err)
+    })
 
   //seta todas as opções de quais são os setores
-  useEffect(() => {
-    fetch('http://localhost:5000/setores', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+  await api
+    .get('/setores')
+    .then(({ data }) => {
+      setSetores(data)
     })
-      .then(resp => resp.json())
-      .then(data => {
-        setSetores(data)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [])
+    .catch(err => {
+      console.error(err)
+    })
 
   //tira o padrão do formulario
   const submit = e => {
